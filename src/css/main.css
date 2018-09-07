@@ -61,6 +61,11 @@ footer {
   font-family: papafont;
   text-transform: uppercase;
 }
+@media (max-width: 340px) {
+  #promo-principal-section .promo-principal-section__title {
+    font-size: 26px;
+  }
+}
 #promo-principal-section .promo-principal-section__title .promo-principal-section__image {
   height: 40px;
   width: 40px;
@@ -104,7 +109,6 @@ input[type=radio] {
   cursor: pointer;
   font-size: 14px;
 }
-
 .pizza-count::before {
   content: " ";
   position: absolute;
@@ -116,6 +120,12 @@ input[type=radio] {
   border: 2px solid #009774;
   border-radius: 18px;
   z-index: -1;
+}
+@media (max-width: 340px) {
+  .pizza-count {
+    padding-right: 5px;
+    padding-left: 26px;
+  }
 }
 
 input[type=radio]:checked + label::before {

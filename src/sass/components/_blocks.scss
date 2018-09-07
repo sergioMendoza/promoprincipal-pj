@@ -26,6 +26,9 @@
     font-size: 29px;
     font-family: $papafont;
     text-transform: uppercase;
+    @media (max-width: 340px) {
+      font-size: 26px;
+    }
     .promo-principal-section__image{
       height: 40px;
       width: 40px;
@@ -74,20 +77,25 @@ input[type="radio"] {
   line-height: 36px;
   cursor: pointer;
   font-size: 14px;
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 6px;
+    left: 0;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: 2px solid $green-papa;
+    border-radius: 18px;
+    z-index: -1;
+  }
+  @media (max-width: 340px) {
+    padding-right: 5px;
+    padding-left: 26px;
+  }
 }
 
-.pizza-count::before {
-  content: " ";
-  position: absolute;
-  top: 6px;
-  left: 0;
-  display: block;
-  width: 24px;
-  height: 24px;
-  border: 2px solid $green-papa;
-  border-radius: 18px;
-  z-index: -1;
-}
+
 
 input[type="radio"]:checked+label::before {
   background-color: $green-papa;
