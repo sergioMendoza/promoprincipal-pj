@@ -1,0 +1,15 @@
+
+// buttons
+.bigpizza{
+    .bigpizza__button{
+        text-align: center;
+        background-color: $lightgrey-papa;
+        color: white;
+        border: none;
+        height: 40px;
+        width: 35px;
+        font-size: 18px;
+        outline: none;
+        border-radius: 8px
+    }
+}
