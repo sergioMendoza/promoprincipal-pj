@@ -6,30 +6,33 @@
     font-size: 22px;
     font-weight: 500;
     color: $darkgrey-papa;
-    font-family: "papafont" , sans-serif;
+    font-family: "papafont", sans-serif;
     text-transform: uppercase;
   }
 }
-
 
 #promo-principal-section {
   .promo-principal-section__detail {
     font-size: 14px;
     color: $darkgrey-papa;
-    .promo-principal-section__detail--bold{
+
+    .promo-principal-section__detail--bold {
       font-weight: bold;
     }
   }
-  .promo-principal-section__title{
+
+  .promo-principal-section__title {
     background-color: $darkred-papa;
     color: white;
     font-size: 29px;
     font-family: $papafont;
     text-transform: uppercase;
+
     @media (max-width: 340px) {
       font-size: 26px;
     }
-    .promo-principal-section__image{
+
+    .promo-principal-section__image {
       height: 40px;
       width: 40px;
     }
@@ -45,6 +48,19 @@
     color: $darkgrey-papa;
     font-family: "papafont";
     text-transform: uppercase;
+    text-align: center;
+
+    @media (max-width: 375px) {
+      font-size: 18px;
+    }
+  }
+
+  .pizza__name--position {
+    @media (max-width: 340px) {
+      font-size: 18px;
+      text-align: left !important;
+      padding-left: .5rem;
+    }
   }
 
   .pizza__border {
@@ -77,6 +93,7 @@ input[type="radio"] {
   line-height: 36px;
   cursor: pointer;
   font-size: 14px;
+
   &::before {
     content: " ";
     position: absolute;
@@ -89,13 +106,12 @@ input[type="radio"] {
     border-radius: 18px;
     z-index: -1;
   }
+
   @media (max-width: 340px) {
     padding-right: 5px;
     padding-left: 26px;
   }
 }
-
-
 
 input[type="radio"]:checked+label::before {
   background-color: $green-papa;
