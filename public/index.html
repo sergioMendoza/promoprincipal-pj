@@ -9,10 +9,23 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
   <link rel="stylesheet" href="../src/css/main.css">
-  <title>Promoción Principal</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <title>Promocion Principal</title>
 </head>
 
 <body>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'Messenger'));
+</script>
   <header>
     <div class="headerbox">
       <img class="headerbox__image" src="assets/images/logo.png" alt="logo">
@@ -199,11 +212,31 @@
   </section>
   <footer class="confirm">
     <div>
-      <button class="p-2 text-center confirm__btn-confirm-pizza  confirm__btn-confirm-pizza--promo2">Confirmar</button>
+      <button id="confirmOrder" class="p-2 text-center confirm__btn-confirm-pizza  confirm__btn-confirm-pizza--promo2">Confirmar</button>
     </div>
   </footer>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="js/app.min.js"></script>
+
+<script>
+    window.extAsyncInit = function () {
+        console.log('MessengerExtensions are ready');
+
+        $('#confirmOrder').click(function (event) {
+
+            MessengerExtensions.requestCloseBrowser(function success() {
+                // webview closed
+                console.log('Closed the window!');
+            }, function error(error) {
+                // an error occurred
+                console.log('Error closing browser window!');
+                console.log(error);
+
+            });
+        });
+
+    };
+</script>
   <!-- <script src="../src/js/app.js"></script> -->
 </body>
 
